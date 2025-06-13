@@ -14,11 +14,16 @@ def collect_input():
         "target_consumer": target_consumer.strip()
     }
 
-    os.makedirs("data", exist_ok=True)
-    with open("data/product_input.json", "w") as f:
+    # Get absolute path to the project root's data/ folder
+    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    data_dir = os.path.join(root_dir, "data")
+    os.makedirs(data_dir, exist_ok=True)
+
+    input_file = os.path.join(data_dir, "product_input.json")
+    with open(input_file, "w") as f:
         json.dump(input_data, f, indent=4)
 
-    print("\n✅ Input saved to data/product_input.json")
+    print(f"\n✅ Input saved to {input_file}")
 
 if __name__ == "__main__":
     collect_input()
