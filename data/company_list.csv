@@ -1,11 +1,11 @@
-company_name
-* GoStops
-* Zostel
-* SaffronStays
-* Stayzilla
-* Backpacker Panda
-* FabHotels
-* Airbnb (India operations)
-* Treebo Hotels
-* The Hosteller
-* OYO Rooms
+company_name,department
+* GoStops,Operations/Amenities
+* Zostel,Amenities/Guest Amenities
+* SaffronStays,Operations or Procurement
+* Stayzilla,Amenities or Spa
+* Backpacker Panda,Not applicable
+* FabHotels,Procurement
+* Airbnb (India operations),Amenities or Procurement
+* Treebo Hotels,Procurement/Sourcing
+* The Hosteller,Procurement
+* OYO Rooms,Amenities or Procurement

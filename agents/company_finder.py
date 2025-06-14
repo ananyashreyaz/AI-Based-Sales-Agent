@@ -5,7 +5,6 @@ import json
 import csv
 import google.generativeai as genai
 
-# 🔐 Set your Gemini API key (replace or use env variable)
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "YOUR-API-KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 
