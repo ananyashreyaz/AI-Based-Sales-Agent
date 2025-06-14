@@ -36,7 +36,8 @@ def generate_company_list(input_data):
 
 def save_companies(companies):
     os.makedirs("data", exist_ok=True)
-    csv_path = os.path.join("data", "companies.csv")
+    csv_path = os.path.join("..", "data", "company_list.csv")
+
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["company_name"])
