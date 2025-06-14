@@ -1,29 +1,34 @@
+# input_handler/collect_input.py
+
 import json
 import os
 
 def collect_input():
-    print("📩 SALES AGENT: INPUT HANDLER\n")
+    print("\n📝 Enter product and target details:\n")
+    
+    product_name = input("Product Name: ").strip()
+    product_description = input("Product Description: ").strip()
+    target_consumer = input("Target Consumer (e.g., marketing teams in e-commerce companies): ").strip()
+    company_type = input("Type of Target Companies (e.g., startups, large enterprises): ").strip()
+    location = input("Preferred Company Location (e.g., India, US, Europe, or global): ").strip()
 
-    product_name = input("Enter your product name: ")
-    product_description = input("Describe your product briefly: ")
-    target_consumer = input("Who is your target consumer? (industry/role): ")
-
-    input_data = {
-        "product_name": product_name.strip(),
-        "product_description": product_description.strip(),
-        "target_consumer": target_consumer.strip()
+    data = {
+        "product_name": product_name,
+        "product_description": product_description,
+        "target_consumer": target_consumer,
+        "company_type": company_type,
+        "location": location
     }
 
-    # Get absolute path to the project root's data/ folder
-    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    data_dir = os.path.join(root_dir, "data")
-    os.makedirs(data_dir, exist_ok=True)
+    # Save to root-level data/input.json
+    root_data_path = os.path.join(os.path.dirname(__file__), "..", "data")
+    os.makedirs(root_data_path, exist_ok=True)
+    input_path = os.path.join(root_data_path, "input.json")
 
-    input_file = os.path.join(data_dir, "product_input.json")
-    with open(input_file, "w") as f:
-        json.dump(input_data, f, indent=4)
+    with open(input_path, "w") as f:
+        json.dump(data, f, indent=2)
 
-    print(f"\n✅ Input saved to {input_file}")
+    print("\n✅ Input saved to data/input.json")
 
 if __name__ == "__main__":
     collect_input()
