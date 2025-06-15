@@ -3,7 +3,7 @@ import csv
 import json
 import google.generativeai as genai
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyCfelKcj2UIieWpF9yMQny_dNqKprWS4vc")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 genai.configure(api_key=GEMINI_API_KEY)
 
 INPUT_FILE = os.path.join("..", "data", "company_list.csv")
